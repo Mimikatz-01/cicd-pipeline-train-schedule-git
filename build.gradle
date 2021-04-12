@@ -1,0 +1,28 @@
+plugins {
+	id 'com.moowork.node' version '1.3.1'
+}
+
+defaultTasks 'rytch'
+
+tasks.register('hello') {
+	doLast{
+		println 'Hello Ruslan'
+	}
+}
+tasks.register('another') {
+	doLast{
+		print 'Another task'
+	}
+}
+tasks.register('rus') {
+	doLast{
+		println 'Ruslan'
+	}
+}
+tasks.register('rytch') {	
+	dependsOn another	
+	doLast{
+		println ' is rytch'
+	}
+}
+
